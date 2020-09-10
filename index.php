@@ -47,6 +47,7 @@ switch ($section) {
     break;
     case 'doPost':
         include "controler/doPost.php";
+
     break;
     case "edit":
         echo "This is edit";

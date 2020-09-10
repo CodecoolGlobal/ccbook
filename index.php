@@ -58,6 +58,9 @@
         case "comments":
             include "templates/comments.php";
             break;
+        case "doComment":
+            include "controler/doComments.php";
+            break;
         default:
             include "templates/default.php";
 //            break;

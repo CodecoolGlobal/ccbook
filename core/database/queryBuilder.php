@@ -144,3 +144,15 @@ function getAllPostByPostId($id){
 
         return $result;
     }
+
+    function addComment($userProfileId, $postId, $message){
+
+        $dbh = new PDO('mysql:host=localhost;dbname=codecoolerbook', 'root', '');
+        $query = "INSERT INTO comment (user_profile_id, post_id, message) VALUES ({$userProfileId},{$postId},'{$message}' )";
+        $stmt = $dbh->prepare($query);
+        $stmt->execute();
+
+        return 'Check DB!';
+
+
+    }

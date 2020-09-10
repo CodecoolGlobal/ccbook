@@ -1,8 +1,9 @@
 <?php
 require "core/database/queryBuilder.php";
 
-$profileId = getUserProfileIdByUserId($_GET['subsection'])['id'];
+$profileId = $_SESSION['profileId'];
 $wallPostsArray = getAllPostsByUserId($profileId);
+if($wallPostsArray){
 
 foreach ($wallPostsArray as $wallPost ){
 
@@ -20,5 +21,7 @@ foreach ($wallPostsArray as $wallPost ){
     
     
     ";
+
+}
 
 }

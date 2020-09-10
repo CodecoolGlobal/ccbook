@@ -34,18 +34,21 @@ switch ($section) {
 
     case 'login':
         include "templates/login.php";
-        exit(0);
+
     break;
 
     case 'doLogin':
-
+        include "controler/doLogin.php";
     break;
 
     case 'profile':
-
+        echo "This is profile";
 
     break;
 
+    case "edit":
+        echo "This is edit";
+    break;
     default:
         include "templates/default.php";
     // break

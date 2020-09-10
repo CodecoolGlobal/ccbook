@@ -16,6 +16,17 @@
         case 'register':
             include "templates/register.php";
             break;
+            
+            case 'search':
+        switch ($subSection){
+            case 'friends':
+        include "templates/searchFriends.php";
+        break;
+            case 'other':
+                include 'templates/login.php';
+                break;
+        }
+        break;
 
         case 'doRegister':
             //check if POST
@@ -56,8 +67,9 @@
 
         default:
             include "templates/default.php";
-        // break
+
     }
+
 
 
 ?>

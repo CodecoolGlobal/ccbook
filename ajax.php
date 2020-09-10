@@ -6,7 +6,6 @@ $request = new Request();
 
 $section = $request->get('section');
 $subSection = $request->get('subsection');
-
 switch ($section) {
     case 'posts':
             if ($subSection === NULL) {

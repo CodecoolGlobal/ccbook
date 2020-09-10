@@ -38,7 +38,7 @@
         <label class="form-check-label" for="rememberMe">Remember me</label>
     </div>
     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-    <?= $userFeedback?>
+
 </form>
 </body>
 </html>

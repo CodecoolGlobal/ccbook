@@ -1,7 +1,7 @@
 <?php
 
 include 'core/Request.php';
-
+session_start();
 $request = new Request();
 
 $section = $request->get('section');
@@ -22,7 +22,7 @@ switch ($section) {
         if ( ! isset ( $_POST ) || count($_POST) === 0 ) {
             die('You can\'t access this with GET ');
         }
-
+        include "controler/doRegister.php";
         //do register stuff
         //insert in DB and stuff
         //using $conn
@@ -42,10 +42,12 @@ switch ($section) {
     break;
 
     case 'profile':
-        echo "This is profile";
-
+        var_dump($_SESSION);
+        include  "templates/profile.php";
     break;
-
+    case 'doPost':
+        include "controler/doPost.php";
+    break;
     case "edit":
         echo "This is edit";
     break;

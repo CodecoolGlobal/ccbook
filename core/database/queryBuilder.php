@@ -43,6 +43,12 @@ function addUser($table, $email, $pass){
     $query = "INSERT INTO {$table} (email, password ) VALUES (:email, :password)";
     $stmt = $dbh->prepare($query);
     $stmt->execute($innerData);
+    
+//    $user =  selectUserByEmail('user', 'id', $email);
+//
+//    $userId = $user[0]['id'];
+    
+    // insert profile with $userId
 
     return 'Check DB!';
 }

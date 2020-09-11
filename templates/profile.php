@@ -3,12 +3,18 @@
 require 'core/database/queryBuilder.php';
 
 $profile= selectUserDetails("*", 'user_profile', "id", $_GET['subsection']);
-
+if($profile['image_id']== 1){
+    $profileImage = 'public/images/'.getDefaultImage()['path'];
+} else {
+$profileImage = 'public/images/'.getImageByProfileId($profile['id'])['path'];
+}
 ?>
 <div class="row">
     <div class="col-4">
         <div class="card" style="width: 18rem;">
-            <img src="https://techcentereurope.com/panel/assets/upload/default/default-profile.jpg" class="card-img-top" alt="...">
+            <?php
+            echo '<img src="'.$profileImage.'" alt="profile-Image" width="286" height="286">'
+            ?>
             <div class="card-body">
                 <h3 class="card-title"><?=$profile["first_name"]." ". $profile["last_name"]?></h3>
                 <h5 class="card-title">Birthdate: <?=$profile["birthdate"]?></h5>
@@ -22,7 +28,11 @@ $profile= selectUserDetails("*", 'user_profile', "id", $_GET['subsection']);
             </ul>
             <div class="card-body">
                 <a href="#" class="card-link">Friends</a>
-                <a href="#" class="card-link">Edit Profile</a>
+                <?php
+                    if($_SESSION['profileId'] === $_GET['subsection']){
+                        echo '<a href="index.php?section=editProfile&subsection=null" class="card-link">Edit Profile</a>';
+                    }
+                ?>
             </div>
         </div>
 

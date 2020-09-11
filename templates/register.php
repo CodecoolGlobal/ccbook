@@ -31,6 +31,6 @@
     <button type="submit" name="submit" class="btn btn-primary" id="submit">Sign Up</button>
 </form>
 
-<?= $userFeedBack ?>
+
 
 <?php require 'layout/footer.php' ?>

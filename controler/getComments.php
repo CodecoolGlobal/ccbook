@@ -3,7 +3,6 @@
 //require "core/database/queryBuilder.php";
 
 
-echo "<h2> Comments: </h2>";
 $postId = $_GET['subsection'];
 $comments = getAllCommentsByPostId($postId);
 

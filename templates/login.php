@@ -23,7 +23,9 @@
     <title>Document</title>
 </head>
 <body>
-<form action="index.php?section=doLogin" method="post">
+<h3 class="mt-5" style="text-align: center">Login</h3>
+<div>
+<form action="index.php?section=doLogin" method="post" class="w-25 h-25 mr-auto ml-auto mt-5">
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
@@ -33,13 +35,9 @@
         <label for="exampleInputPassword1">Password</label>
         <input type="password" class="form-control" name="password" placeholder="Password">
     </div>
-    <div class="form-check">
-        <input type="checkbox" class="form-check-input" name="remember" id="exampleCheck1">
-        <label class="form-check-label" for="rememberMe">Remember me</label>
-    </div>
-    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-
+    <button type="submit" class="btn btn-primary mr-auto ml-auto" name="submit">Submit</button>
 </form>
+</div>
 </body>
 </html>
 <?php require 'layout/footer.php' ?>

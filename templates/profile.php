@@ -37,19 +37,16 @@ $profileImage = 'public/images/'.getImageByProfileId($profile['id'])['path'];
         </div>
 
     </div>
-    <div class="col-8">
-        <h1> Add new post! </h1>
+    <div class="col-6 mt-5">
         <form method="post" action="index.php?section=doPost&subsection=<?=$_GET["subsection"]?>">
             <div class="card">
                 <label for="exampleFormControlTextarea1">What's on your mind?</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="1"></textarea>
                 <label for="exampleFormControlFile1"></label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
                 <button type="submit" class="btn btn-primary mb-2">Post</button>
             </div>
         </form>
 
-        <h1>  See the posts.  </h1>
         <div class="post">
 
 <?php require 'controler/getPost.php';

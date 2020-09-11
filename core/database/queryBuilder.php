@@ -1,12 +1,25 @@
 <?php
 
 
-    function addImage($userId, $path)
+    function addImage($profileId, $path)
     {
-        $dbh = new PDO('mysql:host=localhost;dbname=codecoolerbook', 'root', '');
+        $image = getImageByProfileId($_SESSION['profileId']);
+        var_dump($profileId,$path);
+        if($image){
+            $dbh = new PDO('mysql:host=localhost;dbname=codecoolerbook', 'root', '');
+            $stmt = $dbh->query("UPDATE image SET path='{$path}' WHERE user_profile_id={$profileId}");
+            var_dump('este pe update');
+            $stmt->execute();
+        } else {
+            $dbh = new PDO('mysql:host=localhost;dbname=codecoolerbook', 'root', '');
+            $stmt = $dbh->prepare("INSERT INTO image (user_profile_id,path) VALUES(:profileId,:path)");
+            $stmt->bindParam(':profileId',$profileId,PDO::PARAM_INT);
+            $stmt->bindParam(':path',$path,PDO::PARAM_STR);
+            var_dump('este pe insert');
 
-        $stmt = $dbh->query("INSERT INTO image (user_id,path) VALUES({$userId},{$path})");
-        $stmt->execute();
+            $stmt->execute();
+        }
+
     }
 
     function addPost($creatorProfile, $targetProfile, $message, $imageId)
@@ -25,16 +38,24 @@
         $stmt->execute($data);
     }
 
-    function getImageByUserId($userId)
+    function getImageByProfileId($profileId)
     {
         $dbh = new PDO('mysql:host=localhost;dbname=codecoolerbook', 'root', '');
 
-        $stmt = $dbh->query("SELECT * FROM image WHERE user_id={$userId})");
+        $stmt = $dbh->query("SELECT * FROM image WHERE user_profile_id={$profileId}");
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         $dbh = null;
         $stmt = null;
 
         return $result;
+    }
+
+    function getDefaultImage()
+    {
+        $dbh = new PDO('mysql:host=localhost;dbname=codecoolerbook', 'root', '');
+
+        $stmt = $dbh->query("SELECT * FROM image WHERE id=1");
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     function selectUserDetails($column, $table, $field, $fieldValues)
@@ -115,4 +136,26 @@
         $stmt = null;
 
         return $result;
+    }
+
+    function updateUserProfile($inputs){
+        $dbh = new PDO('mysql:host=localhost;dbname=codecoolerbook', 'root', '');
+        $data = [
+            ":firstName"=>$inputs['first_name'],
+            ":lastName"=>$inputs['last_name'],
+            ":country"=>$inputs['country'],
+            ":city"=>$inputs['city'],
+            ":imageId"=>$inputs['image_id'],
+            ":hobby"=>$inputs['hobby'],
+            ":birthdate"=>$inputs['birthdate'],
+            ":workplace"=>$inputs['workplace'],
+            ":studies"=>$inputs['studies'],
+            ":profileId"=>intval($inputs['profile_id'])
+        ];
+
+        $query = "UPDATE user_profile SET first_name=:firstName, last_name=:lastName, country=:country , city=:city, image_id=:imageId , hobby=:hobby , birthdate=:birthdate, workplace=:workplace, studies=:studies WHERE id=:profileId";
+        $stmt = $dbh->prepare($query);
+        var_dump($stmt);
+
+        $stmt->execute($data);
     }

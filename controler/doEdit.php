@@ -32,6 +32,9 @@ if(isset($_POST)){
 //        ];
 
     $imageId ?  $inputs['image_id'] = $imageId : $inputs['image_id'] = intval(getImageByProfileId($_SESSION['profileId'])['id']);
+    if($inputs['image_id'] === 0){
+        $inputs['image_id'] = 1;
+    }
     updateUserProfile($inputs);
     header('Location: http://localhost:8080/ccbook/index.php?section=profile&subsection='.$_SESSION['profileId']);
 } else {

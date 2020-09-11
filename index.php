@@ -11,10 +11,20 @@
 //like, core/db.php in which you create a new conn 
 //and assign it to a variable called $conn
 
-
     switch ($section) {
         case 'register':
             include "templates/register.php";
+            break;
+
+        case 'search':
+            switch ($subSection) {
+                case 'friends':
+                    include "templates/searchFriends.php";
+                    break;
+                case 'other':
+                    include 'templates/login.php';
+                    break;
+            }
             break;
 
         case 'doRegister':
@@ -27,8 +37,13 @@
             //insert in DB and stuff
             //using $conn
             //then, redirect to login
-
             header('Location: index.php?section=login&subsection=null');
+            break;
+
+        case 'updateStatus':
+
+            include "controler/doUpdateStatus.php";
+
             break;
 
         case 'login':
@@ -41,28 +56,27 @@
             break;
 
         case 'profile':
-//            var_dump($_SESSION);
             include "templates/profile.php";
             break;
         case 'doPost':
             include "controler/doPost.php";
             break;
+
         case "editProfile":
             include "templates/edit.php";
             break;
-
-        case "doEdit":
-            include "controler/doEdit.php";
-            break;
-
         case "comments":
             include "templates/comments.php";
             break;
         case "doComment":
             include "controler/doComments.php";
             break;
+
+        case "doEdit":
+            include "controler/doEdit.php";
+            break;
+
         default:
             include "templates/default.php";
-//            break;
+
     }
-?>

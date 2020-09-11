@@ -9,3 +9,7 @@ function  checkPass() {
     }
 }
 
+function checkStatus(statusId){
+    document.getElementById("friendStatus")
+}
+

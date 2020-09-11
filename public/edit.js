@@ -1,10 +1,14 @@
 let inputs = document.getElementsByTagName('input');
 let submitButton = document.getElementById('submitButton');
+submitButton.addEventListener("click",function (e){
+    e.preventDefault();
+    console.log(submitButton);
+})
 
-
-document.getElementById('btnFile').addEventListener('click',function () {
+document.getElementById('btnFile').addEventListener('click',function (){
     document.getElementById('uploadFile').click();
-});
+})
+
 
 submitButton.addEventListener('click', function () {
     let counter = 0;
@@ -24,6 +28,7 @@ submitButton.addEventListener('click', function () {
         }
     } else {
         let form = document.getElementById('form-edit');
+
         form.submit();
     }
 });

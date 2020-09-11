@@ -2,9 +2,7 @@
     require 'core/database/queryBuilder.php';
 if(isset($_POST)){
     $imageId='';
-    var_dump($_POST);
     if($_FILES['image']['name'] !=''){
-        var_dump("mergeee");
         $info = pathinfo($_FILES['image']['name']);
         $ext = $info['extension']; // get the extension of the file
         $imageName = "image.".date('d m Y h:i:s').'.'.$ext;
@@ -34,9 +32,8 @@ if(isset($_POST)){
 //        ];
 
     $imageId ?  $inputs['image_id'] = $imageId : $inputs['image_id'] = intval(getImageByProfileId($_SESSION['profileId'])['id']);
-    var_dump($inputs);
     updateUserProfile($inputs);
-    header('Location: http://localhost:8080/ccbook/index.php?section=editProfile&subsection=null');
+    header('Location: http://localhost:8080/ccbook/index.php?section=profile&subsection='.$_SESSION['profileId']);
 } else {
     echo 'nu mergee';
 }

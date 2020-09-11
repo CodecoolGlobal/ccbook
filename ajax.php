@@ -8,15 +8,17 @@ $section = $request->get('section');
 $subSection = $request->get('subsection');
 
 switch ($section) {
-    case 'posts':
-            if ($subSection === NULL) {
-                print json_encode(['one post probably by id']);
+
+    case 'postari':
+
+            if ($subSection === 'creaza' ) {
+                //insert
+                print json_encode([['some post nonesense'], ['some other post']]);
                 exit(0);
             }
 
-            if ($subSection === 'all' ) {
-                print json_encode([['some post nonesense'], ['some other post']]);
-                exit(0);
+            if (subSection === 'citeste') {
+                //query cu select
             }
     break;
 
@@ -24,3 +26,5 @@ switch ($section) {
 
 http://yourhost /my-app/ajax.php?section=posts&subsection=all
 ?>
+
+

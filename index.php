@@ -27,6 +27,7 @@
             //insert in DB and stuff
             //using $conn
             //then, redirect to login
+
             header('Location: index.php?section=login&subsection=null');
             break;
 
@@ -40,12 +41,12 @@
             break;
 
         case 'profile':
+//            var_dump($_SESSION);
             include "templates/profile.php";
             break;
         case 'doPost':
             include "controler/doPost.php";
             break;
-
         case "editProfile":
             include "templates/edit.php";
             break;
@@ -54,10 +55,14 @@
             include "controler/doEdit.php";
             break;
 
+        case "comments":
+            include "templates/comments.php";
+            break;
+        case "doComment":
+            include "controler/doComments.php";
+            break;
         default:
             include "templates/default.php";
-        // break
+//            break;
     }
-
-
 ?>

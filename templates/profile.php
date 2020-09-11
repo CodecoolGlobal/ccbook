@@ -1,22 +1,28 @@
 <?php require 'layout/head.php' ?>
+<?php
+require 'core/database/queryBuilder.php';
 
+$profile= selectUserDetails("*", 'user_profile', "id", $_GET['subsection']);
 
+?>
 <div class="row">
     <div class="col-4">
         <div class="card" style="width: 18rem;">
             <img src="https://techcentereurope.com/panel/assets/upload/default/default-profile.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h3 class="card-title"><?=$profile["first_name"]." ". $profile["last_name"]?></h3>
+                <h5 class="card-title">Birthdate: <?=$profile["birthdate"]?></h5>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+                <li class="list-group-item">Country: <?=$profile["country"]?></li>
+                <li class="list-group-item">City: <?=$profile["city"]?></li>
+                <li class="list-group-item">Workplace: <?=$profile["workplace"]?></li>
+                <li class="list-group-item">Studies: <?=$profile["studies"]?></li>
+                <li class="list-group-item">Hobbies: <?=$profile["hobby"]?></li>
             </ul>
             <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                <a href="#" class="card-link">Friends</a>
+                <a href="#" class="card-link">Edit Profile</a>
             </div>
         </div>
 
@@ -40,8 +46,7 @@
 
 ?>
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="public/wall.js"></script>
+
     </div>
 </div>
 

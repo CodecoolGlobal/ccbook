@@ -1,8 +1,8 @@
 <?php
 
 
-//$profileId = $_SESSION['profileId'];
-$profileId = getUserProfileIdByUserId($_GET['subsection'])['id'];
+
+$profileId = $_GET['subsection'];
 
 $wallPostsArray = getAllPostsByUserId($profileId);
 if($wallPostsArray){

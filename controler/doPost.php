@@ -1,8 +1,8 @@
 <?php
 require 'core/database/queryBuilder.php';
-$creator_post = getUserProfileIdByUserId($_SESSION['userId'])['id'];
+$creator_post = $_SESSION['profileId'];
 
-$target_post = getUserProfileIdByUserId($_GET['subsection'])['id'];
+$target_post = $_GET['subsection'];
 
 $message = $_POST['message'];
 $img = 6;

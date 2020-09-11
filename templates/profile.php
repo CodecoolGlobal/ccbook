@@ -2,7 +2,7 @@
 <?php
 require 'core/database/queryBuilder.php';
 
-$profile= selectUserDetails("*", 'user_profile', "user_id", $_GET['subsection']);
+$profile= selectUserDetails("*", 'user_profile', "id", $_GET['subsection']);
 
 ?>
 <div class="row">

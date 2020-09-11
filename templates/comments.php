@@ -3,7 +3,7 @@ require 'layout/head.php' ;
 require "core/database/queryBuilder.php";
 
 $post = getAllPostByPostId($_GET['subsection']);
-var_dump($post);
+
 
 //display post
 echo "
@@ -16,7 +16,7 @@ echo "
     Post:
   </div>
     <h5 class='card-title'>{$post['message']}</h5>
-    <a href='#' class='btn btn-primary'>Go to the wall</a>
+    <a href='index.php?section=profile&subsection={$post['target_profile_id']}' class='btn btn-primary'>Go to the wall</a>
 </div>
   <div class='card-footer text-muted'>
 

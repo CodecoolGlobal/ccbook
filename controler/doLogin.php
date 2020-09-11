@@ -29,7 +29,7 @@
                 header('Location: http://localhost/ccbook/index.php?section=editProfile&subsection=null');
             } else {
                 header(
-                    'Location: http://localhost/ccbook/index.php?section=profile&subsection='.$_SESSION['userId']
+                    'Location: http://localhost/ccbook/index.php?section=profile&subsection='.$_SESSION['profileId']
                 );
             }
         }

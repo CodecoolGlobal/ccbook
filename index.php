@@ -41,7 +41,7 @@
             break;
 
         case 'profile':
-            var_dump($_SESSION);
+//            var_dump($_SESSION);
             include "templates/profile.php";
             break;
         case 'doPost':

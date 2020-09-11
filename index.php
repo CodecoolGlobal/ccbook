@@ -12,64 +12,69 @@
 //and assign it to a variable called $conn
 
 
-    switch ($section) {
-        case 'register':
-            include "templates/register.php";
-            break;
-            
-            case 'search':
+switch ($section) {
+    case 'register':
+        include "templates/register.php";
+        break;
+
+    case 'search':
         switch ($subSection){
             case 'friends':
-        include "templates/searchFriends.php";
-        break;
+                include "templates/searchFriends.php";
+                break;
             case 'other':
                 include 'templates/login.php';
                 break;
+    }
+    break;
+
+    case 'doRegister':
+        //check if POST
+        if (!isset ($_POST) || count($_POST) === 0) {
+            die('You can\'t access this with GET ');
         }
+        include "controler/doRegister.php";
+        //do register stuff
+        //insert in DB and stuff
+        //using $conn
+        //then, redirect to login
+        header('Location: index.php?section=login&subsection=null');
         break;
 
-        case 'doRegister':
-            //check if POST
-            if (!isset ($_POST) || count($_POST) === 0) {
-                die('You can\'t access this with GET ');
-            }
-            include "controler/doRegister.php";
-            //do register stuff
-            //insert in DB and stuff
-            //using $conn
-            //then, redirect to login
-            header('Location: index.php?section=login&subsection=null');
-            break;
+    case 'updateStatus':
 
-        case 'login':
-            include "templates/login.php";
+        include "controler/doUpdateStatus.php";
 
-            break;
+        break;
 
-        case 'doLogin':
-            include "controler/doLogin.php";
-            break;
+    case 'login':
+        include "templates/login.php";
 
-        case 'profile':
-            include "templates/profile.php";
-            break;
-        case 'doPost':
-            include "controler/doPost.php";
-            break;
+        break;
 
-        case "editProfile":
-            include "templates/edit.php";
-            break;
+    case 'doLogin':
+        include "controler/doLogin.php";
+        break;
 
-        case "doEdit":
-            include "controler/doEdit.php";
-            break;
+    case 'profile':
+        include "templates/profile.php";
+        break;
+    case 'doPost':
+        include "controler/doPost.php";
+        break;
 
-        default:
-            include "templates/default.php";
+    case "editProfile":
+        include "templates/edit.php";
+        break;
 
-    }
+    case "doEdit":
+        include "controler/doEdit.php";
+        break;
+
+    default:
+        include "templates/default.php";
+
+}
 
 
 
-?>

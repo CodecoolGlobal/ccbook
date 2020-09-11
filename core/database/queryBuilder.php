@@ -25,11 +25,11 @@
         $stmt->execute($data);
     }
 
-    function getImageByUserId($userId)
+    function getImageByProfileId($profileId)
     {
         $dbh = new PDO('mysql:host=localhost;dbname=codecoolerbook', 'root', '');
 
-        $stmt = $dbh->query("SELECT * FROM image WHERE user_id={$userId})");
+        $stmt = $dbh->query("SELECT * FROM image WHERE user_profile_id={$profileId}");
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         $dbh = null;
         $stmt = null;
@@ -116,3 +116,39 @@
 
         return $result;
     }
+
+    function searchUser($userProfileId, $searchValue){
+        if($userProfileId !== -1) {
+
+
+            $dbh = new PDO('mysql:host=localhost;dbname=codecoolerbook', 'root', '');
+
+            $stmt = $dbh->query
+            ("SELECT  user_id, first_name, last_name, country, city, image_id, hobby, birthdate, status, receiver_id
+                FROM user_profile up 
+                LEFT JOIN friends_list fl
+                    ON up.user_id = fl.receiver_id
+                    WHERE fl.sender_id = {$userProfileId}
+                    AND up.first_name = '{$searchValue}'
+                    OR up.last_name = '{$searchValue}'
+                ORDER BY fl.status");
+
+
+
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            return $result;
+        } else {
+            return "Mai incearca";
+        }
+
+        return "Error";
+        }
+
+function updateFriendStatus($statusId, $receiver_id)
+{
+    $dbh = new PDO('mysql:host=localhost;dbname=codecoolerbook', 'root', '');
+    $stmt = $dbh->query("UPDATE friends_list SET status={$statusId} WHERE receiver_id={$receiver_id}");
+    var_dump('este pe update');
+    $stmt->execute();
+}

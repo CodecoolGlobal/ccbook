@@ -2,6 +2,15 @@
 
 class Request
 {
+    /**
+     * @var null
+     */
+    private $section;
+    /**
+     * @var null
+     */
+    private $subsection;
+
     public function __construct()
     {
         if ( count($_GET) === 0 ) {

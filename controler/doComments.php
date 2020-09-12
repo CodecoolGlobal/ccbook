@@ -6,4 +6,4 @@ $postId = $_GET['subsection'];
 $message = $_POST['message'];
 addComment($userProfileId, $postId,$message);
 
-header('Location: http://localhost:8080/ccbook/index.php?section=comments&subsection='.$postId);
+header('Location: http://localhost/ccbook/index.php?section=comments&subsection='.$postId);

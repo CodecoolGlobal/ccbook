@@ -1,6 +1,7 @@
 <?php
     require "core/database/queryBuilder.php";
     $userFeedback = '';
+
     if (isset($_POST['submit'])) {
         $userInputEmail = $_POST["email"];
         $userDetails = selectUserDetails("*", "user", "email", $userInputEmail);
@@ -30,6 +31,13 @@
                     'Location: http://localhost:8080/ccbook/index.php?section=profile&subsection='.$_SESSION['profileId']
                 );
             }
+        }
+        else {
+            session_destroy();
+            header('Location: http://localhost:8080/ccbook/index.php?section=login&subsection=null');
+            echo "wrong";
+            session_start();
+            $_SESSION['wrongInput'] = 1;
         }
     }
 

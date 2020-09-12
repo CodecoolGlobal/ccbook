@@ -56,6 +56,7 @@
             break;
 
         case 'profile':
+
             include "templates/profile.php";
             break;
         case 'doPost':
@@ -75,7 +76,9 @@
         case "doEdit":
             include "controler/doEdit.php";
             break;
-
+        case "friendsList":
+            include "templates/friendsList.php";
+            break;
         default:
             include "templates/default.php";
 

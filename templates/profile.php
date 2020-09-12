@@ -39,7 +39,7 @@
                 <!--                <li class="list-group-item">Hobbies: --><? //=$profile["hobby"]?><!--</li>-->
             </ul>
             <div class="card-body">
-                <a href="#" class="card-link">Friends</a>
+                <a href="index.php?section=friendsList&subsection=<?=$_GET["subsection"]?>" class="card-link">Friends</a>
                 <?php
                     if ($_SESSION['profileId'] === $_GET['subsection']) {
                         echo '<a href="index.php?section=editProfile&subsection=null" class="card-link">Edit Profile</a>';

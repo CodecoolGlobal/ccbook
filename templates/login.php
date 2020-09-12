@@ -1,9 +1,5 @@
 <?php require 'layout/head.php';
 
-if($_SESSION['wrongInput'] === 1){
-    echo "<br><p style='color: red;  text-align: center;'>Email or password wrong! Please check and try again. </p>";
-}
-
 ?>
 
 <!doctype html>
@@ -35,4 +31,9 @@ if($_SESSION['wrongInput'] === 1){
 </div>
 </body>
 </html>
+<?php
+    if(isset($_SESSION['wrongInput'])){
+    echo "<br><p style='color: red;  text-align: center;'>Email or password wrong! Please check and try again. </p>";
+}
+?>
 <?php require 'layout/footer.php' ?>

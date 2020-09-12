@@ -35,7 +35,6 @@
         else {
             session_destroy();
             header('Location: http://localhost:8080/ccbook/index.php?section=login&subsection=null');
-            echo "wrong";
             session_start();
             $_SESSION['wrongInput'] = 1;
         }

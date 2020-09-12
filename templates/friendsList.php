@@ -2,7 +2,9 @@
 require 'core/database/queryBuilder.php';
 $receiver_chase = getFriendRelation($_GET['subsection'], 'receiver');
 $sender_chase = getFriendRelation($_GET['subsection'], 'sender');
-
+if(count(array_merge($receiver_chase,$sender_chase)) == 0){
+    echo "You need more freinds!!!";
+}
 
 foreach (array_merge($receiver_chase,$sender_chase) as $arr){
     {

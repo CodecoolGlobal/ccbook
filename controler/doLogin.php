@@ -24,10 +24,10 @@
             }
 
             if ($counter > 4) {
-                header('Location: http://localhost/ccbook/index.php?section=editProfile&subsection=null');
+                header('Location: http://localhost:8080/ccbook/index.php?section=editProfile&subsection=null');
             } else {
                 header(
-                    'Location: http://localhost/ccbook/index.php?section=profile&subsection='.$_SESSION['profileId']
+                    'Location: http://localhost:8080/ccbook/index.php?section=profile&subsection='.$_SESSION['profileId']
                 );
             }
         }

@@ -36,7 +36,7 @@ if(isset($_POST)){
         $inputs['image_id'] = 1;
     }
     updateUserProfile($inputs);
-    header('Location: http://localhost/ccbook/index.php?section=profile&subsection='.$_SESSION['profileId']);
+    header('Location: http://localhost:8080/ccbook/index.php?section=profile&subsection='.$_SESSION['profileId']);
 } else {
     echo 'nu mergee';
 }

@@ -19,7 +19,7 @@ foreach (array_merge($receiver_chase,$sender_chase) as $arr){
                         <div class='card-body'>
                             <h5 class='card-title'> {$user_details['first_name']}  {$user_details['last_name']}</h5>
                        
-                            <a href='index.php?section=profile&subsection={$user_details['id']} ' class='btn btn-primary'>Go somewhere</a>
+                            <a href='index.php?section=profile&subsection={$user_details['id']} ' class='btn btn-primary'>View the profile</a>
                          </div>
                         </div>";}
         }

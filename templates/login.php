@@ -1,17 +1,10 @@
-<?php //require 'layout/head.php' ?>
-<!---->
-<!--<form action="index.php?section=doRegister" method="POST">-->
-<!--    <h1> LOGIN </h1>-->
-<?php
-//require "core/database/queryBuilder.php";
-//$response = selectAllusers();
-//var_dump($response);
-//?>
-<!--    -->
-<!--</form>-->
-<!---->
-<?php //require 'layout/footer.php' ?>
-<?php require 'layout/head.php' ?>
+<?php require 'layout/head.php';
+
+if($_SESSION['wrongInput'] === 1){
+    echo "<br><p style='color: red;  text-align: center;'>Email or password wrong! Please check and try again. </p>";
+}
+
+?>
 
 <!doctype html>
 <html lang="en">

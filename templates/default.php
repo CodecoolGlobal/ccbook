@@ -9,8 +9,8 @@
 
         </div>
         <div class="card-body">
-            <a href="index.php?section=register&subsection=null" class="btn btn-primary"> Go to Register </a>
-            <a href="index.php?section=login&subsection=null" class="btn btn-primary"> Go to Login </a>
+            <a href="index.php?section=register&subsection=null" class="btn btn-sm btn-primary"> Go to Register </a>
+            <a href="index.php?section=login&subsection=null" class="btn btn-sm btn-primary"> Go to Login </a>
         </div>
     </div>
 <?php require 'layout/footer.php' ?>

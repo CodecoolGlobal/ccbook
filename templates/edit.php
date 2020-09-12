@@ -10,7 +10,7 @@
     $fullPath = 'public/images/'.$imagePath;
     $formElement = '<div class="container justify-content-center w-50 h-50 mt-5"><form enctype="multipart/form-data" method="POST" action="index.php?section=doEdit"  id="form-edit">
     <div class="form-row">
-    <button id="btnFile" type="button" style="border: none;margin: 0;padding: 0;background-color:transparent;">
+    <button id="btnFile" type="button" class="mb-2" style="border: none;margin: 0;padding: 0;background-color:transparent;">
         <img src="'.$fullPath.'" alt="my image" width="200" height="200" class="float-left">
         </button>
         <div class="wrapper" style="display: none;"> <input type="file" accept="image/jpg,image/jpeg,image/png" name="image" id="uploadFile"></div>
@@ -71,7 +71,7 @@
         ).'">'.
         '</div>
     </div>
-    <button type="button" class="btn btn-primary" name="submitBtn" id="submitButton">Submit</button>
+    <button type="button" class="btn btn-sm btn-primary" name="submitBtn" id="submitButton">Submit</button>
 </form>
 <div id="feedback"></div>
 <script src="public/edit.js" defer></script>

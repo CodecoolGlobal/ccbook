@@ -12,7 +12,6 @@ if( isset($_POST['submit']) ){
         $hashedPassword = password_hash($userInputPass, PASSWORD_DEFAULT);
         addUser("user", $userInputEmail, $hashedPassword );
         $userId = selectUserDetails("id","user","email",$userInputEmail);
-        var_dump($userId['id']);
         addUserProfile($userId['id']);
         $userFeedBack = " Succes";
     }else{

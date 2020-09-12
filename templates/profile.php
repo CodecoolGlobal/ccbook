@@ -10,7 +10,7 @@ $profileImage = 'public/images/'.getImageByProfileId($profile['id'])['path'];
 }
 ?>
 <div class="row">
-    <div class="col-4">
+    <div class="col-4 mt-5 ml-3">
         <div class="card" style="width: 18rem;">
             <?php
             echo '<img src="'.$profileImage.'" alt="profile-Image" width="286" height="286">'
@@ -37,23 +37,23 @@ $profileImage = 'public/images/'.getImageByProfileId($profile['id'])['path'];
         </div>
 
     </div>
-    <div class="col-6 mt-5">
+    <div class="col-5 mt-5">
         <form method="post" action="index.php?section=doPost&subsection=<?=$_GET["subsection"]?>">
             <div class="card">
                 <label for="exampleFormControlTextarea1">What's on your mind?</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="1"></textarea>
                 <label for="exampleFormControlFile1"></label>
-                <button type="submit" class="btn btn-primary mb-2">Post</button>
             </div>
+                <button type="submit" class="btn btn-sm btn-primary mb-2 w-25 h-25 mr-auto ml-auto">Post</button>
         </form>
 
-        <div class="post">
 
-<?php require 'controler/getPost.php';
+        <div class="post mt-3">
 
-?>
+            <?php require 'controler/getPost.php';
+
+            ?>
         </div>
-
     </div>
 </div>
 

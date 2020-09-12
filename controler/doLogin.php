@@ -1,7 +1,6 @@
 <?php
     require "core/database/queryBuilder.php";
     $userFeedback = '';
-    session_destroy();
     if (isset($_POST['submit'])) {
         $userInputEmail = $_POST["email"];
         $userDetails = selectUserDetails("*", "user", "email", $userInputEmail);
@@ -9,7 +8,6 @@
             $userInputEmail = $_POST["email"];
             $userInputPass = $_POST["password"];
             $userId = $userDetails['id'];
-
             session_start();
 
             $_SESSION['userId'] = $userId;

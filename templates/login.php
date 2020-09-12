@@ -23,9 +23,9 @@
     <title>Document</title>
 </head>
 <body>
-<h3 class="mt-5" style="text-align: center">Login</h3>
-<div>
-<form action="index.php?section=doLogin" method="post" class="w-25 h-25 mr-auto ml-auto mt-5">
+<div class="mt-5">
+<h3 style="display: block;text-align: center">Login</h3>
+<form action="index.php?section=doLogin" method="post" class="w-25 h-25 mr-auto ml-auto mt-4 border rounded p-3">
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
@@ -35,7 +35,9 @@
         <label for="exampleInputPassword1">Password</label>
         <input type="password" class="form-control" name="password" placeholder="Password">
     </div>
-    <button type="submit" class="btn btn-primary mr-auto ml-auto" name="submit">Submit</button>
+    <div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-sm btn-primary mr-auto ml-auto" name="submit">Submit</button>
+    </div>
 </form>
 </div>
 </body>

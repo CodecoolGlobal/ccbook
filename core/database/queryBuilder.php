@@ -163,7 +163,7 @@
 
         $stmt = $dbh->query(
             "SELECT user_profile.last_name,user_profile.first_name ,post.id, post.message FROM user_profile INNER JOIN post ON user_profile.id = post.creator_profile_id 
-    WHERE post.target_profile_id = {$profileId}"
+    WHERE post.target_profile_id = {$profileId} ORDER BY id DESC"
         );
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $dbh = null;

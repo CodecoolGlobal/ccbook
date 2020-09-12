@@ -245,3 +245,30 @@ function updateFriendStatus($statusId, $receiver_id)
     $stmt->execute();
 }
 
+
+function getFriendRelation($profileId, $selectColumn)
+{
+    $dbh = new PDO('mysql:host=localhost;dbname=codecoolerbook', 'root', '');
+
+    if($selectColumn === 'receiver'){
+
+        $stmt = $dbh->query(
+            "SELECT receiver_id FROM friends_list WHERE sender_id={$profileId} AND status=1"
+        );
+    }
+    if ($selectColumn === 'sender'){
+
+        $stmt = $dbh->query(
+            "SELECT sender_id FROM friends_list WHERE receiver_id={$profileId} AND status=1"
+        );
+    }
+
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $dbh = null;
+    $stmt = null;
+
+    return $result;
+}
+
+
+//SELECT receiver_id FROM friends_list WHERE sender_id=4 AND status=1

@@ -1,6 +1,6 @@
 <?php
 
-    include 'core/Request.php';
+include 'core/Request.php';
     session_start();
     $request = new Request();
 
@@ -53,6 +53,10 @@
 
         case 'doLogin':
             include "controler/doLogin.php";
+            break;
+
+        case 'doLogout':
+            include "controler/doLogout.php";
             break;
 
         case 'profile':

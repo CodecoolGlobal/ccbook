@@ -14,7 +14,10 @@
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav">
-            <li class="nav-item dropdown col-sm-12">
+            <?php if(isset($_SESSION['profileId']))
+            {
+                echo
+            '<li class="nav-item dropdown col-sm-12">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     My Profile
                 </a>
@@ -23,9 +26,22 @@
                     <a class="dropdown-item" href="#">View Friends</a>
                     <a class="dropdown-item" href="#">View Posts</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Log out</a>
+                    <a class="dropdown-item" href="index.php?section=doLogout&subsection=null">Log out</a>
                 </div>
-            </li>
+            </li>';
+            } else {
+                echo
+                '<li class="nav-item dropdown col-sm-12">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sign In
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="index.php?section=login&subsection=null">Sign In</a>
+                    <a class="dropdown-item" href="index.php?section=register&subsection=null">Register</a>
+                </div>
+            </li>';
+            }
+            ?>
         </ul>
 
     </div>

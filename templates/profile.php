@@ -11,7 +11,7 @@
     }
 ?>
 
-<div class="row mt-5">
+<div class="row">
     <div class="col-4 mt-5 ml-3">
         <div class="card" style="width: 18rem;">
             <?php

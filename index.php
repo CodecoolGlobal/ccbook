@@ -55,6 +55,10 @@ include 'core/Request.php';
             include "controler/doLogin.php";
             break;
 
+        case 'doLogout':
+            include "controler/doLogout.php";
+            break;
+
         case 'profile':
 
             include "templates/profile.php";

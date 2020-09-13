@@ -1,6 +1,6 @@
 <?php
 
-    include 'core/Request.php';
+include 'core/Request.php';
     session_start();
     $request = new Request();
 

@@ -1,3 +1,11 @@
+window.onload = () =>
+{
+    let navSearch = document.getElementById("navSearch");
+    navSearch.addEventListener("focusin", navFocusIn, true);
+    navSearch.addEventListener("focusout", navFocusOut, true);
+}
+
+
 function  checkPass() {
     if (document.getElementById('pass').value ===
         document.getElementById('confPass').value) {
@@ -13,3 +21,21 @@ function checkStatus(statusId){
     document.getElementById("friendStatus")
 }
 
+
+
+function navFocusIn(){
+    let nS = document.getElementById("navSearch");
+    nS.placeholder = "Search CodeCoolers";
+    nS.style.width = '18rem';
+}
+
+function navFocusOut(){
+    let nS = document.getElementById("navSearch");
+    const yourText = `&#xf002;`
+
+    const parser = new DOMParser();
+    nS.placeholder = '';
+    nS.placeholder = nS.placeholder.concat(parser.parseFromString(yourText, "text/html").body.textContent, "   Search");
+    nS.style.width = '8rem';
+
+}

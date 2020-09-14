@@ -1,8 +1,13 @@
 <?php
 
 
+if(isset($_GET['subsection'])) {
+    $profileId = $_GET['subsection'];
+}else{
+    $profileId =$_SESSION['profileId'];
+}
 
-$profileId = $_GET['subsection'];
+
 
 $wallPostsArray = getAllPostsByUserId($profileId);
 if($wallPostsArray){

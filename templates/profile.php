@@ -3,7 +3,7 @@
     require 'core/database/queryBuilder.php';
     require 'public/utilities.php';
 
-    $profile = selectUserDetails("*", 'user_profile', "id", $_GET['subsection']);
+    $profile = selectUserDetails("*", 'user_profile', "id", $_SESSION['profileId']);
     if ($profile['image_id'] == 1) {
         $profileImage = 'public/images/'.getDefaultImage()['path'];
     } else {

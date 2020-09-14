@@ -6,6 +6,7 @@ $post = getAllPostByPostId($_GET['subsection']);
 $creatorName = selectUserDetails("*","user_profile","id",$post['creator_profile_id']);
 
 //display post
+echo "<div class='pageContainer'><div class='contentWrap'>";
 echo "
 <div class='card text-center'>
   <div class='card-header'>
@@ -38,6 +39,8 @@ echo "
         </form></div>
         
 ";
-
+echo "</div>";
 
 require 'layout/footer.php' ;
+
+echo "</div>";

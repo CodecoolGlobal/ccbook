@@ -4,11 +4,12 @@
     require 'public/utilities.php';
 
     $profile = selectUserDetails("*", 'user_profile', "id", $_GET['subsection']);
-    if ($profile['image_id'] === 100) {
+    if ((int)$profile['image_id'] === 100) {
         $profileImage = 'public/images/'.getDefaultImage()['path'];
     } else {
         $profileImage = 'public/images/'.getImageByProfileId($profile['id'])['path'];
     }
+
 ?>
 <div class="pageContainer">
     <div class="contentWrap">

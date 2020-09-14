@@ -13,7 +13,15 @@ a {
 /*    margin-bottom: 70px;*/
 /*}*/
 
+.pageContainer {
+    position: relative;
+    min-height: 100vh;
+}
 
+.contentWrap {
+    padding-top: 8rem;
+    padding-bottom: 25rem;    /* Footer height */
+}
 
 
 #navBrandText{

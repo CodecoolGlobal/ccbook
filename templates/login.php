@@ -11,8 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
-<div class="mt-5">
+<div class="pageContainer">
+    <div class="contentWrap">
 <h3 style="display: block;text-align: center">Login</h3>
 <form action="index.php?section=doLogin" method="post" class="w-25 h-25 mr-auto ml-auto mt-4 border rounded p-3">
     <div class="form-group">
@@ -29,11 +29,12 @@
     </div>
 </form>
 </div>
-</body>
-</html>
+
+
 <?php
     if(isset($_SESSION['wrongInput'])){
     echo "<br><p style='color: red;  text-align: center;'>Email or password wrong! Please check and try again. </p>";
 }
 ?>
 <?php require 'layout/footer.php' ?>
+</div>

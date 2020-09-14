@@ -10,9 +10,10 @@
         $profileImage = 'public/images/'.getImageByProfileId($profile['id'])['path'];
     }
 ?>
-
+<div class="pageContainer">
+    <div class="contentWrap">
 <div class="row">
-    <div class="col-4 mt-5 ml-3">
+    <div class="col-4 ml-3">
         <div class="card" style="width: 18rem;">
             <?php
                 echo '<img src="'.$profileImage.'" alt="profile-Image" width="286" height="286">'
@@ -62,7 +63,7 @@
 
 
         <div class="post mt-3">
-
+        </div>
             <?php require 'controler/getPost.php';
 
             ?>
@@ -71,4 +72,6 @@
 </div>
 
 
+
 <?php require 'layout/footer.php' ?>
+</div>

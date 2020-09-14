@@ -11,7 +11,8 @@
 <?php //require 'layout/footer.php' ?>
 
 <?php require 'layout/head.php' ?>
-
+<div class="pageContainer">
+    <div class="contentWrap">
 <div class="mt-5">
     <h3 style="text-align: center;display: block">Register</h3>
     <form method="post" action="index.php?section=doRegister" class="w-25 h-25 mr-auto ml-auto mt-4 border rounded p-3">
@@ -37,5 +38,6 @@
     </form>
 </div>
 
-
+    </div>
 <?php require 'layout/footer.php' ?>
+</div>

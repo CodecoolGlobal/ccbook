@@ -8,7 +8,7 @@ $userProfileID = (int)$_SESSION['profileId'];
 $searchValue = $_GET['searchValue'];
 $result = searchUser($userProfileID, $searchValue);
 
-echo '<div class="container mt-5">';
+echo '<div class="pageContainer"><div class="contentWrap"><div class="container">';
 foreach ($result as $profile){
     if(intval($profile['image_id']) === 1){
         $imgPath="public/images/".getDefaultImage()['path'];
@@ -52,9 +52,10 @@ foreach ($result as $profile){
         ';
 }
 
-echo '</div>';
+echo '</div></div>';
 
 require 'layout/footer.php';
+echo '</div>';
 //if(isset($_GET, $_SESSION)){
 //    $userProfileID = $_SESSION['userProfileID'];
 //    $searchValue = $_GET['searchValue'];

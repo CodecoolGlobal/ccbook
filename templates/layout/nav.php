@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" >
     <a class="navbar-brand" href="http://localhost:8080/ccbook/index.php?section=profile&subsection=<?= $_SESSION['profileId']?>">
         <img src="public/images/ccbLOGO.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
     </a>

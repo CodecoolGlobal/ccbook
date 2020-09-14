@@ -100,7 +100,7 @@
         $stmt->execute($innerData);
 
 
-        return 'Check DB!';
+        return 'Check db!';
     }
 
     function getUserProfileIdByUserId($userId)
@@ -126,7 +126,7 @@
         var_dump($stmt);
         $stmt->execute();
 
-        return 'Check DB!';
+        return 'Check db!';
 
     }
 
@@ -203,7 +203,7 @@
         $stmt = $dbh->prepare($query);
         $stmt->execute();
 
-        return 'Check DB!';
+        return 'Check db!';
 
 
     }

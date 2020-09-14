@@ -34,7 +34,7 @@ include 'core/Request.php';
             }
             include "controler/doRegister.php";
             //do register stuff
-            //insert in DB and stuff
+            //insert in db and stuff
             //using $conn
             //then, redirect to login
             header('Location: index.php?section=login&subsection=null');

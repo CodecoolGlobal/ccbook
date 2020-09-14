@@ -191,7 +191,6 @@
 
         $query = "UPDATE user_profile SET first_name=:firstName, last_name=:lastName, country=:country , city=:city, image_id=:imageId , hobby=:hobby , birthdate=:birthdate, workplace=:workplace, studies=:studies WHERE id=:profileId";
         $stmt = $dbh->prepare($query);
-        var_dump($stmt);
 
         $stmt->execute($data);
     }

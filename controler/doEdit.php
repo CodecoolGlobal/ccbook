@@ -33,14 +33,12 @@ if(isset($_POST)){
 //        ];
 
 //    $imageId ?  $inputs['image_id'] = $imageId : $inputs['image_id'] = intval(getImageByProfileId($_SESSION['profileId'])['id']);
-    $imageId ?  $inputs['image_id'] = $imageId : $inputs['image_id'] = 101;
+    $imageId ?  $inputs['image_id'] = (int)$imageId : $inputs['image_id'] = 100;
 //    if($inputs['image_id'] === 0){
 //        $inputs['image_id'] = 1;
 //    }
-//    var_dump($_POST);
-//    var_dump($inputs);
-//    exit();
     updateUserProfile($inputs);
+
     header('Location: http://localhost:8080/ccbook/index.php?section=profile&subsection='.$_SESSION['profileId']);
 } else {
     echo 'nu mergee';

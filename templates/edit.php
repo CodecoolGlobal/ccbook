@@ -8,7 +8,7 @@
         $imagePath = getDefaultImage()['path'];
     }
     $fullPath = 'public/images/'.$imagePath;
-    $formElement = '<div id="formDiv" class="container justify-content-center w-50 h-50 mt-5 border rounded p-3"><form enctype="multipart/form-data" method="POST" action="index.php?section=doEdit"  id="form-edit">
+    $formElement = '<div class="pageContainer"><div class="contentWrap"><div id="formDiv" class="container justify-content-center w-50 h-50 mt-5 border rounded p-3"><form enctype="multipart/form-data" method="POST" action="index.php?section=doEdit"  id="form-edit">
     <div class="form-row">
     <button id="btnFile" type="button" class="mb-2" style="border: none;margin: 0;padding: 0;background-color:transparent;">
         <img src="'.$fullPath.'" alt="my image" width="200" height="200" class="float-left">
@@ -76,7 +76,10 @@
 <script src="public/edit.js" defer></script>
 </div>
 <div id="feedback"></div>
+</div>
 ';
     echo $formElement.'<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>';
 
+require 'layout/footer.php' ;
 
+echo "</div>";

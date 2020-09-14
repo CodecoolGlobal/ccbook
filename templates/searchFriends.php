@@ -10,7 +10,7 @@ $result = searchUser($userProfileID, $searchValue);
 
 echo '<div class="pageContainer"><div class="contentWrap"><div class="container">';
 foreach ($result as $profile){
-    if(intval($profile['image_id']) === 1){
+    if(intval($profile['image_id']) === 100){
         $imgPath="public/images/".getDefaultImage()['path'];
     } else {
         $imgPath= "public/images/".getImageByProfileId((int)$profile['image_id'])['path'];

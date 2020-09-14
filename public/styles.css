@@ -7,10 +7,11 @@ a {
     font-size: 1.1rem !important;
 }
 
-body {
-    padding-top: 80px;
-    padding-bottom: 80px;
-}
+/*body {*/
+/*    padding-top: 80px;*/
+/*    padding-bottom: 80px;*/
+/*    margin-bottom: 70px;*/
+/*}*/
 
 
 
@@ -23,7 +24,7 @@ body {
     color: #23395d;
 }
 
-.footer {
+.footer2 {
     bottom: 0;
     position: absolute;
     width: 100vw;
@@ -31,7 +32,7 @@ body {
     overflow: hidden;
     padding: 70px 0;
     box-sizing: border-box;
-    background-color: #18181a;
+    background-color: #23395d;
 }
 
 .footer__inner {
@@ -98,3 +99,5 @@ body {
     width: 10rem;
     height: auto;
 }
+
+

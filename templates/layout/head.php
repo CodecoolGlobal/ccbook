@@ -14,6 +14,7 @@
     <!-- Custom made -->
     <script rel="script" src="public/statics.js"></script>
     <link rel="stylesheet" href="public/styles.css">
+    <link rel="stylesheet" href="public/footer.css">
     <title>CodeCoolerBook</title>
 
 

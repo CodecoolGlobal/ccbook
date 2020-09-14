@@ -5,7 +5,6 @@ $sender_chase = getFriendRelation($_GET['subsection'], 'sender');
 if(count(array_merge($receiver_chase,$sender_chase)) == 0){
     echo "You need more freinds!!!";
 }
-
 foreach (array_merge($receiver_chase,$sender_chase) as $arr){
     {
         foreach ($arr as   $id  ){
@@ -14,7 +13,7 @@ foreach (array_merge($receiver_chase,$sender_chase) as $arr){
 
               $user_details = selectUserDetails( '*', 'user_profile', 'id', $id );
 
-              echo  " <div class='card' style='width: 18rem;'>
+              echo  " <div class='card m-2' style='width: 18rem;'>
                         <img src='...' class='card-img-top' alt='''>
                         <div class='card-body'>
                             <h5 class='card-title'> {$user_details['first_name']}  {$user_details['last_name']}</h5>
@@ -27,14 +26,6 @@ foreach (array_merge($receiver_chase,$sender_chase) as $arr){
 }
 
 
-
 ?>
-
-
-
-
-
-
-
 
 <?php require 'layout/footer.php' ?>

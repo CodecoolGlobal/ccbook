@@ -84,6 +84,16 @@ include 'core/Request.php';
             include "templates/friendsList.php";
             break;
         default:
-            include "templates/default.php";
+            if (isset($_SESSION['profileId'])) {
+                header(
+                    'Location: http://localhost:8080/ccbook/index.php?section=profile&subsection='.$_SESSION['profileId']
+                );
+                break;
+            } else {
+                include "templates/default.php";
+                break;
+            }
+
+
 
     }

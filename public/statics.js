@@ -39,3 +39,7 @@ function navFocusOut(){
     nS.style.width = '8rem';
 
 }
+
+function currentDate(){
+    return new Date().getFullYear();
+}

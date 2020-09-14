@@ -220,8 +220,8 @@
                 FROM user_profile up 
                 LEFT JOIN friends_list fl
                     ON up.user_id = fl.receiver_id
-                    WHERE fl.sender_id = {$userProfileId}
-                    AND up.first_name = '{$searchValue}'
+                    WHERE 
+                     up.first_name = '{$searchValue}'
                     OR up.last_name = '{$searchValue}'
                 ORDER BY fl.status");
 

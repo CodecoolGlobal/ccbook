@@ -2,7 +2,7 @@
     require 'core/database/queryBuilder.php';
     require 'layout/head.php' ;
     $userData = selectUserDetails("*", "user_profile", "id", $_SESSION['profileId']);
-    if ($userData['image_id'] != 1) {
+    if ($userData['image_id'] != 100) {
         $imagePath = getImageByProfileId($_SESSION['profileId'])['path'];
     } else {
         $imagePath = getDefaultImage()['path'];

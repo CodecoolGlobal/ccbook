@@ -20,6 +20,7 @@ if(isset($_POST)){
         }
     }
     $inputs['profile_id']=intval($_SESSION['profileId']);
+
 //        $inputs = [
 //            "first_name"=>$_POST['first_name'],
 //            "last_name"=>$_POST['last_name'],
@@ -31,10 +32,14 @@ if(isset($_POST)){
 //            "studies"=>$_POST['studies']
 //        ];
 
-    $imageId ?  $inputs['image_id'] = $imageId : $inputs['image_id'] = intval(getImageByProfileId($_SESSION['profileId'])['id']);
-    if($inputs['image_id'] === 0){
-        $inputs['image_id'] = 1;
-    }
+//    $imageId ?  $inputs['image_id'] = $imageId : $inputs['image_id'] = intval(getImageByProfileId($_SESSION['profileId'])['id']);
+    $imageId ?  $inputs['image_id'] = $imageId : $inputs['image_id'] = 101;
+//    if($inputs['image_id'] === 0){
+//        $inputs['image_id'] = 1;
+//    }
+//    var_dump($_POST);
+//    var_dump($inputs);
+//    exit();
     updateUserProfile($inputs);
     header('Location: http://localhost:8080/ccbook/index.php?section=profile&subsection='.$_SESSION['profileId']);
 } else {

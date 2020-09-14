@@ -55,7 +55,7 @@
     {
         $dbh = new PDO('mysql:host=localhost;dbname=codecoolerbook', 'root', '');
 
-        $stmt = $dbh->query("SELECT * FROM image WHERE id=1");
+        $stmt = $dbh->query("SELECT * FROM image WHERE id=100");
 
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }

@@ -2,8 +2,6 @@
 require 'layout/head.php';
 require "core/database/queryBuilder.php";
 
-$_SESSION['profileId'] = 1;
-$_SESSION['userEmail'] = 'di@yahoo.com';
 $userProfileID = (int)$_SESSION['profileId'];
 $searchValue = $_GET['searchValue'];
 $result = searchUser($userProfileID, $searchValue);

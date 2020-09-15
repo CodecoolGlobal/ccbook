@@ -1,5 +1,10 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" >
-    <a class="navbar-brand" href="http://localhost:8080/ccbook/index.php?section=profile&subsection=<?= $_SESSION['profileId']?>">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <?php if (isset($_SESSION['profileId'])){
+        echo
+        '<a class="navbar-brand" href="http://localhost:8080/ccbook/index.php?section=profile&subsection=' . $_SESSION['profileId'].'>"';
+    } else {
+        echo '<a class="navbar-brand" href="http://localhost:8080/ccbook/index.php">';
+    } ?>
         <img src="public/images/ccbLOGO.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
     </a>
     <form method="get" action="index.php" class="my-2 my-lg-0d-inline-block" style="width: 8rem">

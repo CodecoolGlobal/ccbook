@@ -36,18 +36,24 @@ foreach ($result as $profile){
             break;
     }
 
-   echo '
+    $card='
         <div class="card mr-3" style="width: 14rem; display: inline-block">
             <img src="' . $imgPath . '" class="card-img-top" alt="" >
             <div class="card-body">
                 <h5 class="card-title">'.$profile['first_name'] . ' '.$profile['last_name'] . '</h5>
                 <p class="card-text">From: '.$profile['city'] . ', '.$profile['country'] . ' <br>
                                      Birthday: '.$profile['birthdate'] . '
-                 </p>
-                <a href="index.php?section=updateStatus&case='.$profile['status'].'&searchValue='.$_GET['searchValue'].'&id='.$profile['receiver_id'].'" class="btn  '. $color.' '. $isDisabled .'" >'. $btnText .'</a>
-            </div>
-        </div>
-        ';
+                 </p>';
+    if(isset($_SESSION['profileId']))
+    {
+          $card .=  '<a href="index.php?section=updateStatus&case='.$profile['status'].'&searchValue='
+              .$_GET['searchValue'].'&id='.$profile['receiver_id'].'" class="btn  '. $color.' '. $isDisabled .'" >'
+              . $btnText .'</a>';
+    }
+
+    $card .= ' </div></div>';
+
+    echo $card;
 }
 
 echo '</div></div>';

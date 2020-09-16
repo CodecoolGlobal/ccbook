@@ -35,16 +35,29 @@
                 </div>
             </li>';
             } else {
-                echo
-                '<li class="nav-item dropdown col-sm-12">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Sign In
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="index.php?section=login&subsection=null">Sign In</a>
-                    <a class="dropdown-item" href="index.php?section=register&subsection=null">Register</a>
-                </div>
-            </li>';
+                if($_GET['section'] === 'login')
+                {
+                echo '
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active" >
+                            <a class="nav-link" href="http://localhost:8080/ccbook/index.php?section=register&subsection=null">
+                                Join Now</a>
+                        </li>
+                        </ul>
+                </div>';
+            } else {
+                    echo '
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="btn btn-outline-primary" href="http://localhost:8080/ccbook/index.php?section=login&subsection=null">
+                                    Sign in
+                                </a>
+                            </li>
+                        </ul>
+                    </div>';
+                }
             }
             ?>
         </ul>

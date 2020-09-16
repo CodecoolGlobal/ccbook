@@ -39,13 +39,13 @@
         '</div>
 
         <div class="form-group col-md-4">
-            <label for="inputAddress2">City</label>
+            <label for="city">City</label>
             <input type="text" class="form-control" name="city" id="city" value="'.ucwords(
             strtolower($userData['city'])
         ).'">'.
         '</div>
         <div class="form-group col-md-4">
-            <label for="inputCity">* Birthdate</label>
+            <label for="birthdate">* Birthdate</label>
             <input type="date" class="form-control" name="birthdate" id="birthdate" min="1900-01-01" max="'.date('Y-m-d').'" value="'.ucwords(
             strtolower($userData['birthdate'])
         ).'">'.
@@ -53,19 +53,19 @@
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="inputState">Workplace</label>
+            <label for="workplace">Workplace</label>
             <input type="text" class="form-control" name="workplace" id="workplace" value="'.ucwords(
             strtolower($userData['workplace'])
         ).'">'.
         '</div>
         <div class="form-group col-md-4">
-            <label for="inputZip">Hobby</label>
+            <label for="hobby">Hobby</label>
             <input type="text" class="form-control" name="hobby" id="hobby" value="'.ucwords(
             strtolower($userData['hobby'])
         ).'">'.
         '</div>
         <div class="form-group col-md-4">
-            <label for="inputStudies">Studies</label>
+            <label for="study">Studies</label>
             <input type="text" class="form-control" name="studies" id="study" value="'.ucwords(
             strtolower($userData['studies'])
         ).'">'.

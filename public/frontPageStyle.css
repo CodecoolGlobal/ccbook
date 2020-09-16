@@ -118,15 +118,6 @@ li:hover{
     margin-top: 90px;
 }
 
-#contact{
-    background: url(../img/image3.jpg) no-repeat;
-    padding: 40px;
-    color:#fff;
-    border-top: #333 7px solid;
-    border-bottom: #333 7px solid;
-    background-size: cover;
-}
-
 .pageContainer {
     position: relative;
     min-height: 100vh;

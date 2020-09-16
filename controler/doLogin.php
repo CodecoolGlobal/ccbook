@@ -15,7 +15,7 @@
             $_SESSION['userEmail'] = $userInputEmail;
             $userProfileId = getUserProfileIdByUserId($userId)['id'];
             $_SESSION['profileId'] = $userProfileId;
-            $userFeedback = "Succes";
+            $userFeedback = "Success";
             $userInfo = selectUserDetails('*', "user_profile", "user_id", $userId);
             $counter = 0;
             foreach ($userInfo as $item) {

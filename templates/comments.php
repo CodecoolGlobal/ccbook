@@ -33,7 +33,6 @@ echo "
             <div class='card'>
                 <label for='exampleFormControlTextarea1'>What's on your mind?</label>
                 <textarea class='form-control' id='exampleFormControlTextarea1' name='message' rows='1'></textarea>
-                <label for='exampleFormControlFile1'></label>
                 <button type='submit' class='btn btn-primary mb-2 w-25 h-25 ml-auto mr-auto'>Add Comment</button>
             </div>
         </form></div>

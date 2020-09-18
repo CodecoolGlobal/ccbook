@@ -10,3 +10,13 @@
 * Add comments to posts 
 * Search for user
 * Add friend(unstable)
+
+### The technologies we used:
+* mysql
+* phpmyadmin webtool
+* PHP 7.3
+* CSS
+* HTML
+* Javascript Vanilla ES6
+* Bootstrap
+* XAMP bundle

@@ -14,9 +14,9 @@
 ### The technologies used:
 * PHP 7.3
 * MySQL
+* Apache Server
 * CSS
 * HTML
 * Javascript Vanilla ES6
 * Bootstrap
 * phpMyAdmin webtool
-* Apache Server

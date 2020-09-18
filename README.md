@@ -19,4 +19,4 @@
 * Javascript Vanilla ES6
 * Bootstrap
 * phpMyAdmin webtool
-* XAMP bundle(apache server , mysql)
+* Apache Server

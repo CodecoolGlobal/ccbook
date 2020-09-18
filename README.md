@@ -12,11 +12,11 @@
 * Add friend(unstable)
 
 ### The technologies we used:
-* mysql
-* phpmyadmin webtool
 * PHP 7.3
+* MySQL
 * CSS
 * HTML
 * Javascript Vanilla ES6
 * Bootstrap
-* XAMP bundle
+* phpMyAdmin webtool
+* XAMP bundle(apache server , mysql)

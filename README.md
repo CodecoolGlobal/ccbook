@@ -11,7 +11,7 @@
 * Search for user
 * Add friend(unstable)
 
-### The technologies we used:
+### The technologies used:
 * PHP 7.3
 * MySQL
 * CSS

@@ -1,5 +1,5 @@
 # Codecooler Book
-## This is a social website designed to simulate the facebook's users experience.
+## This is a social website designed to simulate the Facebook's users experience.
 ### Some of the main features are:
 * Register 
 * Login 

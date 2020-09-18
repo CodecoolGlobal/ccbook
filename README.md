@@ -7,3 +7,5 @@
 * Edit user profile 
 * Add posts 
 * Add comments to posts 
+* Search for user
+* Add friend(unstable)
